@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('motion-data').innerText =
                 `Acceleration X: ${event.acceleration.x}, Y: ${event.acceleration.y}, Z: ${event.acceleration.z}`;
 				// Verifica se a aceleração é maior que 0.2 em qualquer eixo
-				if (event.acceleration.x) > 4 || event.acceleration.y > 4 || event.acceleration.z > 4 {
+				if ($(event.acceleration.x) > 4) || ($(event.acceleration.y) > 4) || ($(event.acceleration.z) > 4) {
 				alert("Aceleração detectada!")
 				}
         });

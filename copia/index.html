@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Test PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .sensor {
+            margin-bottom: 20px;
+        }
+        .sensor label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="sensor" id="accelerometer">
+        <label>Accelerometer:</label>
+        <div id="accelerometer-data">Waiting for data...</div>
+    </div>
+   
+    <div class="sensor" id="motion">
+        <label>Motion:</label>
+        <div id="motion-data">Waiting for data...</div>
+    </div>
+   
+</body>
+<script src="app.js"></script>
+</html>

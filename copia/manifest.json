@@ -1,0 +1,20 @@
+{
+  "nome" : " Teste de Sensor PWA " ,
+  "short_name" : " SensorTest " ,
+  "start_url" : " . " ,
+  "exibir" : " autônomo " ,
+  "background_color" : " #ffffff " ,
+  "description" : " Um PWA para testar vários sensores de dispositivos " ,
+  "ícones" : [
+    {
+      "src" : " ícone.png " ,
+      "tamanhos" : " 192x192 " ,
+      "tipo" : " imagem/png "
+    },
+    {
+      "src" : " ícone-512.png " ,
+      "tamanhos" : " 512x512 " ,
+      "tipo" : " imagem/png "
+    }
+  ]
+}

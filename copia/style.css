@@ -1,0 +1,228 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('galaga_imgs/background.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Jogador, controles e inimigos */
+#game-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* background-color: black; */
+}
+
+#player {
+    width: 50px;
+    height: 63px;
+    background-image: url('galaga_imgs/nave.png');
+    position: absolute;
+    bottom: 90px; /* Define a distância da nave ao fundo do contêiner */
+    left: 50%; /* Define a posição horizontal central da nave */
+    transform: translateX(-50%); /* Move a nave horizontalmente para o centro */
+	margin-bottom: 15px;
+}
+
+#controls {
+    position: absolute;
+    bottom: 40px; /* Distância entre os botões e a borda inferior */
+    left: 50%; /* Define a posição horizontal central dos botões */
+    transform: translateX(-50%); /* Move os botões horizontalmente para o centro */
+}
+
+.btn{
+    min-width: 70px;
+    min-height: 50px;
+}
+
+#controls button {
+    margin: 0 5px;
+}
+
+#enemy1 {
+    width: 40px;
+    height: 50px;
+    background-image: url('galaga_imgs/boss1.png');
+    position: absolute;
+    top: 30px;
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+#enemy2 {
+    width: 48px;
+    height: 50px;
+    background-image: url('galaga_imgs/boss2.png');
+    position: absolute;
+    top: 30px;
+    left: 50%;
+	transform: translateX(-50%);
+  
+}
+
+#enemy3 {
+    width: 50px;
+    height: 47px;
+    background-image: url('galaga_imgs/boss3.png');
+    position: absolute;
+    top: 30px;
+    left: 80%;
+	transform: translateX(-50%);
+
+}
+
+/* Adicione uma animação de aumento de escala */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+/* Aplica a animação à imagem de explosão */
+.explosion-animation {
+  animation: explode 0.5s ease forwards;
+}
+
+.shot{
+    width: 10px;
+    height: 10px;
+    left: -300px;
+    top: 20px;
+    background-color: white;
+    position: absolute;
+    background-image: url('galaga_imgs/tiro2.png');
+}
+
+.explosion-image {
+    background-size: 70px; /* Defina o tamanho desejado para a largura */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+}
+
+@media(max-width: 999px){
+    #player {
+        width: 50px;
+        height: 63px;
+        background-image: url('galaga_imgs/nave.png');
+        position: absolute;
+        bottom: 150px; /* Define a distância da nave ao fundo do contêiner */
+        left: 50%; /* Define a posição horizontal central da nave */
+        transform: translateX(-50%); /* Move a nave horizontalmente para o centro */
+    }
+    
+    #controls {
+        position: absolute;
+        bottom: 100px; /* Distância entre os botões e a borda inferior */
+        left: 50%; /* Define a posição horizontal central dos botões */
+        transform: translateX(-50%); /* Move os botões horizontalmente para o centro */
+    }
+
+    .btn{
+        min-width: 35px;
+        min-height: 20px;
+    }
+
+    .move{
+        width: 40px;
+    }
+}
+
+.space-button {
+    background-color: #2f2f2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.space-button:hover {
+    background-color: #505050;
+}
+.space-button:active {
+    background-color: #757575;
+}
+
+/* CSS para o modal */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1001; /* Z-index maior do que o overlay */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px; /* Bordas arredondadas */
+    padding: 20px; /* Adiciona espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+  }
+  
+  /* Estilo para o campo de entrada de texto */
+  .modal input[type="text"] {
+    width: calc(100% - 20px); /* Ajusta a largura para levar em consideração o espaçamento */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilo para o botão "Acessar" */
+  .modal button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    vertical-align: middle; /* Centraliza verticalmente */
+  }
+  
+  /* Efeito de hover para o botão */
+  .modal button:hover {
+    background-color: #45a049;
+  }
+  
+  /* CSS para o overlay */
+  .overlay {
+    position: fixed;
+    z-index: 1000; /* Z-index menor do que o modal */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+  }
+  
+  .info{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    display: flex;
+  }
+
+  #nickname, #score{
+    color: white;
+  }
+
+  #score{
+    margin-left: 5px;
+  }
+  

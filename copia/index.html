@@ -1,37 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensor Test PWA</title>
-    <link rel="manifest" href="manifest.json">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .sensor {
-            margin-bottom: 20px;
-        }
-        .sensor label {
-            font-weight: bold;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#317EFB">
+	<title>Galaga simulator</title>
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-   
-    <div class="sensor" id="accelerometer">
-        <label>Accelerometer:</label>
-        <div id="accelerometer-data">Waiting for data...</div>
-    </div>
-   
-    <div class="sensor" id="motion">
-        <label>Motion:</label>
-        <div id="motion-data">Waiting for data...</div>
-    </div>
-   
+
+	<div class="info">
+		<p id="nickname"></p>
+		<p id="score"></p>
+	</div>
+	<div id="game-container">
+
+		<div id="player">
+
+
+		</div>
+
+		<div id="controls">
+			<button id="moveLeftButton" class="btn space-button move">&#60;</button>
+			<button id="fireButton" class="btn space-button">Atirar</button>
+			<button id="moveRightButton" class="btn space-button move">></button>
+		</div>
+
+		<div id="enemy1"></div>
+		<div id="enemy2"></div>
+		<div id="enemy3"></div>
+
+	</div>
+
+	<div class="overlay" id="overlay"></div>
+
+	<div class="modal" id="modal">
+		<form action="" id="login">
+			<h1 class="h3 mb-3 font-weight-normal">Faça login</h1>
+			<label for="nicknameInput" class="sr-only">Seu nome: </label>
+			<input type="text" id="nicknameInput" name="nome" class="form-control" required>
+
+			<div class="checkbox mb-3">
+
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" id="acessar" type="submit">Acessar</button>
+		</form>
+
+	</div>
+
+	<script src="app.js"></script>
 </body>
-<script src="app.js"></script>
+
 </html>

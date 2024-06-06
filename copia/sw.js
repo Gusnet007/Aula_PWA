@@ -4,7 +4,7 @@ auto . addEventListener ( 'instalar' ,  evento  =>  {
              cache de retorno . adicionarTodos ( [
                 '/' ,
                 '/index.html' ,
-                '/sensores.js' ,
+                '/app.js' ,
                 '/manifest.json' ,
                 '/icon.png' ,
                 '/icon-512.png'

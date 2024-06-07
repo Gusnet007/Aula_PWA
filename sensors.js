@@ -74,7 +74,7 @@ if ('ProximitySensor' in window) {
                 `Acceleration X: ${event.acceleration.x},`+
 				` Y: ${event.acceleration.y},`+
 				` Z: ${event.acceleration.z}`;
-				if (event.acceleration.x > 1 || event.acceleration.y > 1 || event.acceleration.z > 1 {
+				if (event.acceleration.x > 1.5 || event.acceleration.y > 1.5 || event.acceleration.z > 1.5 {
 				alert("Aceleração detectada!")
 				}
         });
